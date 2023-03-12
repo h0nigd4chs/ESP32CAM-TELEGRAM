@@ -4,11 +4,11 @@ Author : h0nigd4chs Stuttgart,Germany 12.03.2023
 */
 
 //WIFI-Verbindung herstellen und mit Telegrambot verbinden
-const char* ssid     = "TRAGE HIER DEIN WIFI NAME EIN";   //deine Netzwerk SSID 
-const char* password = "TRAGE HIER DEIN WIFI PASSWORT EIN";   //dein Netzwerk Passwort
+const char* ssid     = "FRITZ!Box 6590 Cable MJ";   //deine Netzwerk SSID 
+const char* password = "66129488961618186828";   //dein Netzwerk Passwort
 
-String myToken = "TRAGE HIER DEIN TELEGRAM BOT TOKEN EIN";   // Erstelle deinen eigenen Bot und hol dir das Token -> https://telegram.me/fatherbot
-String myChatId = "TRAGE HIER DEINE TELEGRAM CHAT ID EIN";        // Chat ID ermitteln -> https://telegram.me/get-id-bot or https://telegram.me/userinfobot
+String myToken = "5880437840:AAFl6p_GYZbTLXZAXgMap45ud9CN69zlZMo";   // Erstelle deinen eigenen Bot und hol dir das Token -> https://telegram.me/fatherbot
+String myChatId = "5016805884";        // Chat ID ermitteln -> https://telegram.me/get-id-bot or https://telegram.me/userinfobot
 
 /*
 Wenn die boolsche Variable "sendHelp" auf "true" gestellt ist, bekommt man bei jedem
@@ -43,6 +43,8 @@ boolean sendHelp = true;
 #define VSYNC_GPIO_NUM    25
 #define HREF_GPIO_NUM     23
 #define PCLK_GPIO_NUM     22
+
+int pinPIR = 13; // Falls ein PIR Sensor benutzt wird, an diesen Pin anschließen
 
 WiFiClientSecure client_tcp;
 long message_id_last = 0;
