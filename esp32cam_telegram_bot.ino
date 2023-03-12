@@ -185,8 +185,8 @@ void executeCommand(String text) {
   if (!text||text=="") return;
     
   // Benutzerdefinierte Befehle
-  if (text=="help"||text=="/help"||text=="/start") {
-    String command = "/help Command list\n/FOTO Live-Screenshot erhalten\n/AN FLASH-LED anschalten\n/AUS FLASH-LED ausschalten\n/NEUSTART Neustart des Boards";
+  if (text=="help"||text=="/help"||text=="/start"||text=="/hilfe"||) {
+    String command = "/HELP Liste aller Befehle\n/FOTO Live-Screenshot erhalten\n/AN FLASH-LED anschalten\n/AUS FLASH-LED ausschalten\n/NEUSTART Neustart des Boards";
 
     //Ein Custom Keyboard für Telegram
     //Nur eine Reihe
