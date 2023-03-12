@@ -1,14 +1,14 @@
 /*
-ESP32-CAM Using keyboard in Telegram Bot
+ESP32-CAM und Telegram Bot IoT
 Author : h0nigd4chs Stuttgart,Germany 12.03.2023
 */
 
 //WIFI-Verbindung herstellen und mit Telegrambot verbinden
-const char* ssid     = "DEIN WIFI NAME HIER EINTRAGEN";   //deine Netzwerk SSID 
-const char* password = "[DEIN WIFI PASSWORT HIER EINTRAGEN]";   //dein Netzwerk Passwort
+const char* ssid     = "TRAGE HIER DEIN WIFI NAME EIN";   //deine Netzwerk SSID 
+const char* password = "TRAGE HIER DEIN WIFI PASSWORT EIN";   //dein Netzwerk Passwort
 
-String myToken = "DEIN BOT TOKEN HIER EINTRAGEN";   // Erstelle deinen eigenen Bot und hol dir das Token -> https://telegram.me/fatherbot
-String myChatId = "DEINE TELEGRAM CHAT ID HIER EINTRAGEN";        // Chat ID ermitteln -> https://telegram.me/get-id-bot or https://telegram.me/userinfobot
+String myToken = "TRAGE HIER DEIN TELEGRAM BOT TOKEN EIN";   // Erstelle deinen eigenen Bot und hol dir das Token -> https://telegram.me/fatherbot
+String myChatId = "TRAGE HIER DEINE TELEGRAM CHAT ID EIN";        // Chat ID ermitteln -> https://telegram.me/get-id-bot or https://telegram.me/userinfobot
 
 /*
 Wenn die boolsche Variable "sendHelp" auf "true" gestellt ist, bekommt man bei jedem
@@ -185,14 +185,14 @@ void executeCommand(String text) {
   if (!text||text=="") return;
     
   // Benutzerdefinierte Befehle
-  if (text=="help"||text=="/help"||text=="/start"||text=="/hilfe"||) {
-    String command = "/HELP Liste aller Befehle\n/FOTO Live-Screenshot erhalten\n/AN FLASH-LED anschalten\n/AUS FLASH-LED ausschalten\n/NEUSTART Neustart des Boards";
+  if (text=="help"||text=="/help"||text=="/start"||text=="/hilfe") {
+    String command = "h0nigd4chs ESP32CAM Telegram h0nig4uge\n/HELP Liste aller Befehle\n/FOTO Live-Screenshot erhalten\n/AN FLASH-LED anschalten\n/AUS FLASH-LED ausschalten\n/NEUSTART Neustart des Boards";
 
     //Ein Custom Keyboard für Telegram
     //Nur eine Reihe
     //String keyboard = "{\"keyboard\":[[{\"text\":\"/on\"},{\"text\":\"/off\"},{\"text\":\"/capture\"},{\"text\":\"/restart\"}]],\"one_time_keyboard\":false}";
     //Zwei Reihen(Standard)
-    String keyboard = "{\"keyboard\":[[{\"text\":\"/FLASH-LED AN\"},{\"text\":\"/FLASH-LED AUS\"}], [{\"text\":\"/SCREENSHOT\"},{\"text\":\"/NEUSTART\"}]],\"one_time_keyboard\":false}";
+    String keyboard = "{\"keyboard\":[[{\"text\":\"/AN\"},{\"text\":\"/AUS\"}], [{\"text\":\"/FOTO\"},{\"text\":\"/NEUSTART\"}]],\"one_time_keyboard\":false}";
     
     sendMessage2Telegram(myToken, myChatId, command, keyboard);  //Liste der Übertragungsfunktionen
   } else if (text=="/FOTO") {  //Ein aktuellen Screenshot vom Video bekommen
